@@ -8,17 +8,33 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 /**
- * Varáveis para usar a aplicação
+ * Variáveis para usar a aplicação
  */
+var config = require('./config/system');
 var user = require('./routes/user');
 var app = express();
+
+/**
+ * Variável e configuração para o uso do MongoDB
+ */
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+mongoose
+    .connect('mongodb://localhost/user-list', { promiseLibrary: require('bluebird') })
+    .then(() => console.log('Conectado com Sucesso!'))
+    .catch((err) => console.error(err));
+
+/**
+ * Variável para usar o localStorage
+ */
+var localStorage = require('localStorage');
 
 /**
  * Chamada necessária para execução da aplicação
  */
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extender': 'false'}));
+app.use(bodyParser.urlencoded({'extended': 'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/users', express.static(path.join(__dirname, 'dist')));
 app.use('/user', user);
