@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+
+/**
+ * Dependências do módulo
+ */
+var app = require('../app');
+var debug = require('debug')('user-app:server');
+var http = require('http');
+
+/**
+ * Obtendo a porta do ambiente para armazenar no 'Express'
+ */
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Criando o servidor HTTP
+ */
+var server = http.createServer(app);
+
+/**
+ * Ouvindo(listen) a porta fornecida, em todas as interfaces de rede
+ */
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Função para que Normalize a porta retornando um número, string ou falso
+ */
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    // Pipe nomeado
+    if (isNaN(port)) {
+        return val;
+    }
+
+    // Número da porta
+    if (port >=0) {
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Função para o evento 'listener' do servidor HTTP para o evento de 'error'
+ */
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof port === 'string' ? 'O pipe ' + port : 'A porta ' + port;
+
+    // mensagens amigáveis para erros específicos do 'listen'
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requer privilégios elevados!');
+            process.exit(1);
+            break;
+
+        case 'EADDRINUSE':
+            console.error(bind + ' já está em uso!');
+            process.exit(1);
+            break;
+    
+        default:
+            throw error;
+    } 
+}
+
+/**
+ * Função para o evento 'listener' do servidor HTTP para o evento de 'listening'
+ */
+function onListening() {
+    var addr = server.address();
+    var bind = typeof addr === 'string' ? 'o pipe ' + addr : 'a porta' + addr.port;
+
+    debug('Ouvindo ' + bind);
+}
