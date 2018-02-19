@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
   MatIconModule,
   MatCardModule,
   MatMenuModule,
@@ -21,6 +23,8 @@ import {
 @NgModule({
   imports: [
     MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
     MatIconModule,
     MatCardModule,
     MatMenuModule,
@@ -34,6 +38,8 @@ import {
   ],
   exports: [
     MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,    
     MatIconModule,
     MatCardModule,
     MatMenuModule,

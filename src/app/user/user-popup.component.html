@@ -9,7 +9,8 @@
             type="email"
             name="email"
             [formControl]="itemForm.controls['email']"
-            placeholder="Email">
+            placeholder="Email"
+            required>
         </mat-form-field>
     </div>
 
@@ -19,7 +20,8 @@
         matInput
         name="first_name"
         [formControl]="itemForm.controls['first_name']"
-        placeholder="Fisrt Name">
+        placeholder="Fisrt Name"
+        required>
       </mat-form-field>
     </div>
     <div fxFlex="50"  class="pr-1 size-column-50">
@@ -28,7 +30,8 @@
             matInput
             name="last_name"
             [formControl]="itemForm.controls['last_name']"
-            placeholder="Fisrt Name">
+            placeholder="Fisrt Name"
+            required>
         </mat-form-field>
     </div>
 
@@ -39,7 +42,8 @@
         type="number"
         name="vat"
         [formControl]="itemForm.controls['vat']"
-        placeholder="VAT">
+        placeholder="VAT"
+        required>
       </mat-form-field>
     </div>
     <div fxFlex="50"  class="pr-1 size-column-50">
@@ -58,17 +62,23 @@
         matInput
         name="address"
         [formControl]="itemForm.controls['address']"
-        placeholder="Address">
+        placeholder="Address"
+        required>
       </mat-form-field>
     </div>
 
     <div fxFlex="50"  class="pr-1 size-column-50">
       <mat-form-field class="full-width">
-        <input
-        matInput
-        name="country"
-        [formControl]="itemForm.controls['country']"
-        placeholder="Country">
+        <mat-select 
+          name="country" 
+          [formControl]="itemForm.controls['country']"
+          placeholder="Country" 
+          required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let country of countries" [value]="country.name">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div fxFlex="50"  class="pr-1 size-column-50">
@@ -77,7 +87,8 @@
         matInput
         name="postal_code"
         [formControl]="itemForm.controls['postal_code']"
-        placeholder="Zip / Postal Code">
+        placeholder="Zip / Postal Code"
+        required>
       </mat-form-field>
     </div>
 
@@ -87,7 +98,8 @@
         matInput
         name="city"
         [formControl]="itemForm.controls['city']"
-        placeholder="City">
+        placeholder="City"
+        required>
       </mat-form-field>
     </div>
     <div fxFlex="50"  class="pr-1 size-column-50">
@@ -96,7 +108,8 @@
             matInput
             name="state"
             [formControl]="itemForm.controls['state']"
-            placeholder="State / Province">
+            placeholder="State / Province"
+            required>
         </mat-form-field>
     </div>
 
