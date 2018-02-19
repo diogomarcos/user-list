@@ -39,6 +39,11 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/users', express.static(path.join(__dirname, 'dist')));
 app.use('/user', user);
 
+/**
+ * Variável para chamanda dos html
+ */
+app.set('view engine', 'html');
+
 // Pegando o 404 e encaminho para o manipulador de erros
 app.use(function(req, res, next) {
     var err = new Error('Não encontrado');

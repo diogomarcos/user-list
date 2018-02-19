@@ -1,0 +1,109 @@
+<!-- PopUp com o formulário para adição e edição do usuário -->
+<h1 matDialogTitle>{{data.title}}</h1>
+  <form [formGroup]="itemForm" (ngSubmit)="submit()">
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap" style="flex-flow: row wrap; box-sizing: border-box; display: flex;">
+    <div fxFlex="100"  class="pr-1 size-column-100">
+        <mat-form-field class="full-width">
+            <input
+            matInput
+            type="email"
+            name="email"
+            [formControl]="itemForm.controls['email']"
+            placeholder="Email">
+        </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="first_name"
+        [formControl]="itemForm.controls['first_name']"
+        placeholder="Fisrt Name">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-1 size-column-50">
+        <mat-form-field class="full-width">
+            <input
+            matInput
+            name="last_name"
+            [formControl]="itemForm.controls['last_name']"
+            placeholder="Fisrt Name">
+        </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="number"
+        name="vat"
+        [formControl]="itemForm.controls['vat']"
+        placeholder="VAT">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="company"
+        [formControl]="itemForm.controls['company']"
+        placeholder="Company / Organization">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100"  class="pr-1 size-column-100">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="address"
+        [formControl]="itemForm.controls['address']"
+        placeholder="Address">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="country"
+        [formControl]="itemForm.controls['country']"
+        placeholder="Country">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="postal_code"
+        [formControl]="itemForm.controls['postal_code']"
+        placeholder="Zip / Postal Code">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1 size-column-50">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="city"
+        [formControl]="itemForm.controls['city']"
+        placeholder="City">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-1 size-column-50">
+        <mat-form-field class="full-width">
+            <input
+            matInput
+            name="state"
+            [formControl]="itemForm.controls['state']"
+            placeholder="State / Province">
+        </mat-form-field>
+    </div>
+
+    <div fxFlex="100" class="mt-1 size-column-100">
+      <button mat-raised-button color="primary" [disabled]="itemForm.invalid">Save</button>
+      <span fxFlex></span>
+      <button mat-button color="warn" type="button" (click)="dialogRef.close(false)">Cancel</button>
+    </div>
+  </div>
+  </form>

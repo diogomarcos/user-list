@@ -1,0 +1,77 @@
+<!-- lista com todos os usuários cadastrados -->
+<div class="adjust-column">
+  <div class="m-333">
+    <!-- <span fxFlex></span> -->
+    <button (click)="openPopUp({}, true)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" data-upgraded=",MaterialButton,MaterialRipple">
+      <i class="material-icons" role="presentation">add</i>
+      <span class="visuallyhidden">Add</span>
+      <span class="mdl-button__ripple-container">
+        <span class="mdl-ripple is-animating" style="width: 160.392px; height: 160.392px; transform: translate(-50%, -50%) translate(33px, 26px);"></span>
+      </span>
+    </button>
+  </div>
+  <mat-card class="p-0">
+      <mat-card-content class="p-0">
+        <ngx-datatable
+              class="material ml-0 mr-0"
+              [rows]="users"
+              [columnMode]="'flex'"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              [limit]="5"
+              [rowHeight]="'auto'">
+              <ngx-datatable-column name="Email" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.email }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Name" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.last_name }}, {{ row?.first_name }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Vat" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.vat | currency }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Company" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.company }}
+                </ng-template>
+              </ngx-datatable-column>
+              <!-- <ngx-datatable-column name="Address" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.address }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Country" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.country }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Zip" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.postal_code }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="City" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.city }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="State" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row?.state }}
+                </ng-template>
+              </ngx-datatable-column> -->
+              <ngx-datatable-column name="Actions" [flexGrow]="1">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <button mat-icon-button mat-sm-button color="primary" class="mr-1" (click)="openPopUp(row)"><mat-icon>edit</mat-icon></button>
+                  <button mat-icon-button mat-sm-button color="warn" (click)="deleteItem(row)"><mat-icon>delete</mat-icon></button>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+      </mat-card-content>
+    </mat-card> 
+</div>

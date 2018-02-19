@@ -10,7 +10,7 @@ var UserSchema = new mongoose.Schema({
     email: String,
     first_name: String,
     last_name: String,
-    vat: Number,
+    vat: String,
     company: String,
     address: String,
     country: String,
