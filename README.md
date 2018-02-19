@@ -77,20 +77,20 @@ um novo usuário.
     + Content-Type Header: application/json
     + Body: email, first_name, last_name, vat, company, address, country, postal_code, city e state
     + Exemplo:
-    ![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/src/assets/images/screen/tela-api.PNG)
+    ![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/master/src/assets/images/screen/tela-api.PNG)
 
 ### Resultado do Desenvolvimento
 Abaixo estão disponibilizados as telas da aplicação:
 
 + Página Inícial / Gerenciar Usuários:
-![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/src/assets/images/screen/tela-inicial.PNG)
+![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/master/src/assets/images/screen/tela-inicial.PNG)
 
 + Tela Adicionar Usuário:
-![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/src/assets/images/screen/tela-add.PNG)
+![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/master/src/assets/images/screen/tela-add.PNG)
 
 + Tela Editar Usuário:
-![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/src/assets/images/screen/tela-edit.PNG)
+![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/master/src/assets/images/screen/tela-edit.PNG)
 
 + Tela Excluir Usuário:
-![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/src/assets/images/screen/tela-delete.PNG)
+![alt tag](https://raw.githubusercontent.com/diogomarcos/user-list/master/src/assets/images/screen/tela-delete.PNG)
 
